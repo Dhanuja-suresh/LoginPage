@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFFC00;
+            font-family: Arial, sans-serif;
+        }
+
+        .fm {
+            border-radius: 8px;
+            background-color: white;
+            padding: 30px;
+            box-sizing: border-box;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+            text-align: center;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .fm [type="text"],
+        [type="password"] {
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 6px;
+        }
+
+        .fm [type="submit"] {
+            width: 100%;
+            padding: 12px;
+            display: block;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .fm [type="submit"]:hover {
+            background-color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;//
+        }
+
+        .psw {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    
+        @media screen and (max-width:600px) {
+            .fm {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form class="fm" id="loginForm">
+        <center>
+            <h1>Snapchat</h1>
+            <input type="text" placeholder="Phone number, username, or email" id="name" required><br>
+            <input type="password" placeholder="Password" id="pw" required><br>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <br><br>
+            <input type="submit" value="Sign In">
+            <br>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </center>
+
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+                var password = document.getElementById('pw').value;
+                if (password === 'snap123') { 
+                    alert('Process Successful');
+                    var myWindow = window.open("", "", "width=500,height=500");
+                    myWindow.document.write("<h2>Welcome to Snapchat!</h2>");
+                    myWindow.setTimeout(() => {
+                        myWindow.close();
+                    }, 1000);
+                } else {
+                    alert('Login Failed');
+                }
+            });
+        </script>
+ </form>
+</body>
+
+</html>
